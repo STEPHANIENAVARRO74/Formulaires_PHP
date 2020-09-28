@@ -1,0 +1,66 @@
+form.php
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form  action="thanks.php"  method="GET">
+        <div>
+          <label  for="name">Nom :</label>
+          <input  type="text"  id="name"  name="user_name">
+        </div>
+        <div>
+          <label  for="fistname">Prénom :</label>
+          <input  type="text"  id="fistname"  name="fist_name">
+        </div>
+        <div>
+          <label  for="courriel">E-mail :</label>
+            <input  type="email"  id="courriel"  name="user_email">
+        </div>
+        <div>
+          <label  for="telephone">Téléphone :</label>
+            <input  type="tel"  id="telephone"  name="user_tel">
+        </div>
+        <div>
+          <label  for="sujet">Sujet :</label>
+            <select name="choix">
+            <option value="choix1">Choix 1</option>
+            <option value="choix2">Choix 2</option>
+            <option value="choix3">Choix 3</option>
+            <option value="choix4">Choix 4</option>
+          </select>
+        </div>
+        <div>
+          <label  for="message">Message :</label>
+          <textarea  id="message"  name="user_message"></textarea>
+        </div>
+        <div  class="button">
+          <button  type="submit">Envoyer votre message</button>
+        </div>     
+</form>
+</body>
+</html>
+
+
+
+thanks.php
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>Merci <?php echo $_GET['user_name'];?> <?php echo $_GET['fist_name'];?> de nous avoir contacté à propos de <?php echo $_GET['choix'];?>. Un de nos conseiller vous contactera soit à l’adresse <?php echo $_GET['user_email'];?>  ou par téléphone au <?php echo $_GET['user_tel'];?> dans les plus brefs délais pour traiter votre demande : <?php echo $_GET['user_message'];?></p>
+</body>
+</html>
+
+
+Merci NAVARRO STEPHANIE de nous avoir contacté à propos de choix1. Un de nos conseiller vous contactera soit à l’adresse stephy.n@hotmail.fr ou par téléphone au 0623232323 dans les plus brefs délais pour traiter votre demande : Bonjour, prob de connexion. Merci
+
